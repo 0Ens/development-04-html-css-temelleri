@@ -1,0 +1,238 @@
+/* ===== CUSTOM PROPERTIES (değişkenler) ===== */
+:root {
+  /* Renkler */
+  --renk-arkaplan: #0f172a;
+  --renk-yuzey: #1e293b;
+  --renk-kart: #1e293b;
+  --renk-vurgu: #38bdf8;
+  --renk-metin: #e2e8f0;
+  --renk-metin-soluk: #94a3b8;
+  --renk-sinir: #334155;
+
+  /* Boşluklar */
+  --bosluk-xs: 0.5rem;
+  --bosluk-sm: 1rem;
+  --bosluk-md: 1.5rem;
+  --bosluk-lg: 3rem;
+  --bosluk-xl: 5rem;
+
+  /* Tipografi */
+  --font-govde: 'Segoe UI', system-ui, sans-serif;
+  --font-boyut-temel: 1rem;
+
+  /* Köşe yuvarlama */
+  --radius: 0.5rem;
+}
+
+/* ===== RESET + BOX-SIZING ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== TEMEL TİPOGRAFİ ===== */
+html {
+  font-size: 16px;           /* 1rem = 16px */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-govde);
+  font-size: var(--font-boyut-temel);
+  background-color: var(--renk-arkaplan);
+  color: var(--renk-metin);
+  line-height: 1.7;
+}
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.1rem; }
+
+a {
+  color: var(--renk-vurgu);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+  outline: 2px solid var(--renk-vurgu);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== LAYOUT SARMALAYICISI ===== */
+.container {
+  width: min(100% - 2rem, 1100px);
+  margin-inline: auto;
+}
+
+/* ===== HEADER + NAV (FLEXBOX) ===== */
+/*
+   Neden flexbox? Nav bir boyutlu: yatay bir sıra.
+   Flexbox tek eksen için idealdir — ögeleri yan yana dizer,
+   h1'i sola, ul'yi sağa iter (space-between).
+*/
+header {
+  background-color: var(--renk-yuzey);
+  border-bottom: 1px solid var(--renk-sinir);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--bosluk-sm);
+}
+
+nav ul {
+  display: flex;
+  gap: var(--bosluk-md);
+}
+
+nav a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--renk-metin-soluk);
+  transition: color 0.2s;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--renk-vurgu);
+}
+
+/* ===== MAIN ===== */
+main {
+  padding-block: var(--bosluk-xl);
+}
+
+section {
+  margin-bottom: var(--bosluk-xl);
+  padding-inline: var(--bosluk-sm);
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+section h2 {
+  margin-bottom: var(--bosluk-md);
+  color: var(--renk-vurgu);
+  letter-spacing: 0.02em;
+}
+
+/* ===== PROJEler GRİD'İ ===== */
+/*
+   Neden grid? Projeler iki boyutlu: hem satır hem sütun kontrolü lazım.
+   auto-fit + minmax numarası:
+   - minmax(280px, 1fr): kart en az 280px, en fazla eşit pay alır
+   - auto-fit: ekrana kaç kart sığarsa o kadar sütun açar (media query yok!)
+   → 320px'te 1 sütun, 768px'te 2, 1024px'te 3 olur — otomatik.
+*/
+.projeler-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--bosluk-md);
+}
+
+/* ===== PROJE KARTI ===== */
+.proje-karti {
+  background-color: var(--renk-kart);
+  border: 1px solid var(--renk-sinir);
+  border-radius: var(--radius);
+  padding: var(--bosluk-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--bosluk-xs);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.proje-karti:hover {
+  border-color: var(--renk-vurgu);
+  transform: translateY(-2px);
+}
+
+.proje-karti h3 {
+  color: var(--renk-metin);
+}
+
+.proje-karti p {
+  color: var(--renk-metin-soluk);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.proje-karti a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* ===== FOOTER / İLETİŞİM ===== */
+footer {
+  background-color: var(--renk-yuzey);
+  border-top: 1px solid var(--renk-sinir);
+  padding-block: var(--bosluk-lg);
+  text-align: center;
+}
+
+footer h2 {
+  margin-bottom: var(--bosluk-md);
+  color: var(--renk-vurgu);
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--bosluk-md);
+}
+
+footer a {
+  color: var(--renk-metin-soluk);
+  font-size: 0.9rem;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  color: var(--renk-vurgu);
+}
+
+/* ===== RESPONSIVE ===== */
+/*
+   auto-fit+minmax zaten çoğunu halleder.
+   Sadece header'ı düzenlemek gerekiyor: dar ekranda
+   adı ve nav'ı alt alta diz.
+*/
+@media (max-width: 600px) {
+  header .container {
+    flex-direction: column;
+    gap: var(--bosluk-sm);
+    text-align: center;
+  }
+
+  nav ul {
+    gap: var(--bosluk-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  footer ul {
+    flex-direction: column;
+    gap: var(--bosluk-sm);
+    align-items: center;
+  }
+}
