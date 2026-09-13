@@ -41,6 +41,12 @@ Sayfayı DevTools'ta şu genişliklerde test et (F12 → Toggle Device Toolbar):
 - 768px — iki sütun kart
 - 1024px — üç sütun kart
 
+Ekran görüntüleri: `screenshots/` klasöründe.
+
+## Erişilebilirlik
+
+Kontrast kontrolü: Chrome DevTools → Elements → bir renk değerine tıkla → Color Picker → alt kısımda kontrast oranı yazar. Tüm metin elementleri WCAG AA standardını (4.5:1) geçiyor.
+
 ## Ne Öğrendim
 
 - Semantik HTML etiketleri (`header`, `nav`, `main`, `section`, `article`, `footer`) ve doğru kullanım amacı
