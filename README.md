@@ -41,7 +41,9 @@ Sayfayı DevTools'ta şu genişliklerde test et (F12 → Toggle Device Toolbar):
 - 768px — iki sütun kart
 - 1024px — üç sütun kart
 
-Ekran görüntüleri: `screenshots/` klasöründe.
+| 320px | 768px | 1024px |
+|-------|-------|--------|
+| ![320px](screenshots/Screenshot%20320.png) | ![768px](screenshots/Screenshot%20768.png) | ![1024px](screenshots/Screenshot%201024.png) |
 
 ## Erişilebilirlik
 
