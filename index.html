@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enes Erul – Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- ===== HEADER + NAV ===== -->
+    <header>
+      <h1>Enes Erul</h1>
+      <nav aria-label="Ana navigasyon">
+        <ul>
+          <li><a href="#hakkimda">Hakkımda</a></li>
+          <li><a href="#projeler">Projeler</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===== ANA İÇERİK ===== -->
+    <main>
+
+      <!-- Hakkımda bölümü -->
+      <section id="hakkimda" aria-labelledby="hakkimda-baslik">
+        <h2 id="hakkimda-baslik">Hakkımda</h2>
+        <p>
+          SWE-101 development path'ini yürüyen son sınıf öğrencisiyim.
+          HTML, CSS ve temel programlama kavramlarını öğreniyor;
+          gerçek projeler üretmeye çalışıyorum.
+          Yazılım mühendisi olmayı ve güzel, erişilebilir arayüzler tasarlamayı hedefliyorum.
+        </p>
+      </section>
+
+      <!-- Projeler bölümü -->
+      <section id="projeler" aria-labelledby="projeler-baslik">
+        <h2 id="projeler-baslik">Projeler</h2>
+
+        <div class="projeler-grid">
+
+          <!-- Her proje bağımsız bir article -->
+          <article class="proje-karti">
+            <h3>CLI Programı</h3>
+            <p>Komut satırından çalışan basit bir araç. Kullanıcı girdisini işler ve sonuç üretir.</p>
+            <a href="https://github.com/0Ens" target="_blank" rel="noopener noreferrer">GitHub'da Gör →</a>
+          </article>
+
+          <article class="proje-karti">
+            <h3>Veri Fonksiyonları</h3>
+            <p>Dizi ve nesne manipülasyonu üzerine yazılmış fonksiyon koleksiyonu.</p>
+            <a href="https://github.com/0Ens" target="_blank" rel="noopener noreferrer">GitHub'da Gör →</a>
+          </article>
+
+          <article class="proje-karti">
+            <h3>API Keşif Raporu</h3>
+            <p>Bir REST API'yi inceleyip belgelediğim keşif çalışması.</p>
+            <a href="https://github.com/0Ens" target="_blank" rel="noopener noreferrer">GitHub'da Gör →</a>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER / İLETİŞİM ===== -->
+    <footer id="iletisim">
+      <h2>İletişim</h2>
+      <ul>
+        <li><a href="https://github.com/0Ens" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="mailto:eneserul0@gmail.com">E-posta</a></li>
+      </ul>
+    </footer>
+
+  </body>
+</html>
