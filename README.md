@@ -2,6 +2,8 @@
 
 Saf HTML + CSS ile sıfırdan yapılmış kişisel portfolio sayfası. Framework kullanılmadı.
 
+**Canlı:** https://0ens.github.io/development-04-html-css-temelleri/
+
 ## Sayfayı Açmak
 
 ```bash
